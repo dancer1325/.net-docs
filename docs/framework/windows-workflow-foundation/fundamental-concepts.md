@@ -12,17 +12,25 @@ ms.assetid: 0e930e80-5060-45d2-8a7a-95c0690105d4
 ## Workflows and Activities  
 
  * workflow
-   * == structured collection of actions / models a process 
+   * == structured collection of actions / models a real-world process 
      * workflow's steps == hierarchy of activities / 
        * topmost activity | hierarchy -- define the -- workflow itself
        * == | PREVIOUS versions, `SequentialWorkflow` & `StateMachineWorkflow`
-   * a host -- interacts, via 
-     * `<xref:System.Activities.WorkflowInvoker>`, with a -- workflow
-     * `<xref:System.Activities.WorkflowApplication>`, to get -- explicit control | execution of 1! workflow instance
+   * a host -- interacts with the workflow run-time engine, via 
+     * `<xref:System.Activities.WorkflowInvoker>`, to -- invoke the workflow
+       * == method
+       * wrap `<xref:System.Activities.ActivityInstance>`
+     * `<xref:System.Activities.WorkflowApplication>`, to -- get explicit control | execution of 1! workflow instance
+       * wrap `<xref:System.Activities.ActivityInstance>`
      * `<xref:System.ServiceModel.WorkflowServiceHost>`-- for message-based interactions | multi-instance scenarios 
+       * wrap `<xref:System.Activities.ActivityInstance>`
 * activity
   * -- models -- EACH workflow's action
+  * == elemental units
   * == collections of OTHER activities
+  * used || executed by
+    * people
+    * system functions
   * ways to define them
     * `<xref:System.Activities.Activity>` -- as -- class base
       * USUALLY defined -- via -- XAML
@@ -43,7 +51,7 @@ ms.assetid: 0e930e80-5060-45d2-8a7a-95c0690105d4
 | Variable   | Stores data in an activity                                          |
 | Argument   | Moves data INTO and OUT of an activity                              |
 | Expression | == activity / ELEVATED return value -- used in -- argument bindings |
-  
+
 ## Workflow Runtime  
 
 * workflow runtime
@@ -67,6 +75,10 @@ ms.assetid: 0e930e80-5060-45d2-8a7a-95c0690105d4
         * signal a workflow continuation & pass values | workflow
         * persist workflow data.
         * add extensions / used by activities  
+    * == core activity runtime 
+      * Reason: 🧠 --responsible for -- activity execution 🧠
+    * | application domain,
+      * can exist SEVERAL, running concurrently
   * `<xref:System.Activities.ActivityContext>`
     * derived classes
       * `<xref:System.Activities.NativeActivityContext>`
