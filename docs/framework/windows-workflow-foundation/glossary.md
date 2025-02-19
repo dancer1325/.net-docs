@@ -10,13 +10,11 @@ ms.topic: "reference"
 
 # Windows Workflow Foundation Glossary for .NET Framework 4.5
 
-The following terms are used in the Windows Workflow Foundation documentation.
-
 ## Terms
 
 |Term|Definition|
 |----------|----------------|
-|activity|A unit of program behavior in Windows Workflow Foundation. Single activities can be composed together into more complex activities.|
+|activity| == unit of program behavior in Windows Workflow Foundation <br/> SINGLE activities -- can be composed together into -- MORE complex activities|
 |activity action|A data structure used to expose callbacks for workflow and activity execution.|
 |argument|Defines the data flow into and out of an activity. Each argument has a specified direction: in, out, or in/out. These represent the input, output, and input/output parameters of the activity.|
 |bookmark|The point at which an activity can pause and wait to be resumed.|
@@ -30,5 +28,5 @@ The following terms are used in the Windows Workflow Foundation documentation.
 |substance|Represents a group of related bookmarks under a common identifier and allows the runtime to make decisions about whether a particular bookmark resumption is valid or may become valid.|
 |type converter|A CLR type can be associated with one or more System.ComponentModel.TypeConverter derived types that enable converting instances of the CLR type to and from instances of other types. A type converter is associated with a CLR type using the System.ComponentModel.TypeConverterAttribute attribute.  A TypeConverterAttribute can be specified directly on the CLR type or on a property. A type converter specified on a property always takes precedence over a type converter specified on the CLR type of the property.|
 |variable|Represents the storage of some data that must be saved and accessed later.|
-|workflow|A single activity or tree of activities invoked by a host process.|
+|workflow| == SINGLE activity or tree of activities -- invoked by a -- host process|
 |XAML|eXtensible Application Markup Language|
